@@ -170,7 +170,7 @@ class _DetailedAudioPageState extends State<DetailedAudioPage> {
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(40),
-                color: Get.isDarkMode ? Colors.black12 : Colors.white,
+                color: Get.isDarkMode ? Colors.black38 : Colors.white,
               ),
             ),
           ),
