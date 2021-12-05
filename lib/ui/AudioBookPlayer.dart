@@ -59,7 +59,7 @@ class _AudioBookPlayerState extends State<AudioBookPlayer> {
     });
 
     if (mounted) {
-      this.widget.audioBookPlayer!.play(this.widget.audioUrls.first).then((cur) => print("playing from url"));
+      this.widget.audioBookPlayer!.play(this.widget.audioUrls.elementAt(0)).then((cur) => print("playing from url"));
       setState(() {
         isPlaying = true;
       });
