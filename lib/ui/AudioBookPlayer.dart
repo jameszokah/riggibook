@@ -60,11 +60,12 @@ class _AudioBookPlayerState extends State<AudioBookPlayer> {
     });
 
     if (mounted) {
-      this.widget.audioBookPlayer!.play(this.widget.audioUrls.elementAt(initIndex)).then((cur) => print("playing from url"));
-      setState(() {
-        isPlaying = true;
-        initIndex = this.widget.audioUrlIndex;
-      });
+      if (this.widget.audioUrls.length >= 0) {
+        this.widget.audioBookPlayer!.play(this.widget.audioUrls.elementAt(initIndex)).then((cur) => print("playing from url"));
+        setState(() {
+          initIndex = this.widget.audioUrlIndex;
+        });
+      }
     }
   }
 
