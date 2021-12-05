@@ -276,7 +276,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                     return [
                       SliverAppBar(
                         pinned: true,
-                        backgroundColor: Get.isDarkMode ? Colors.black36 : Colors.white,
+                        backgroundColor: Get.isDarkMode ? Colors.black38 : Colors.white,
                         automaticallyImplyLeading: false,
                         bottom: PreferredSize(
                           preferredSize: Size.fromHeight(44.0),
