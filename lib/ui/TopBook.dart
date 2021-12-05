@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'AppColor.dart';
 import 'DetailedAudioPage.dart';
 import 'package:audio/service/model.dart';
@@ -33,7 +34,7 @@ class TopBook extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: AppColor.tabVarViewColor,
+                  color: Get.isDarkMode ? Colors.black : AppColor.tabVarViewColor,
                   boxShadow: [
                     BoxShadow(
                       color: Colors.grey.withOpacity(0.2),

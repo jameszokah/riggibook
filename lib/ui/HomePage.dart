@@ -1,5 +1,6 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:xml2json/xml2json.dart';
 import '../service/ThemeService.dart';
@@ -273,10 +274,10 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                     return [
                       SliverAppBar(
                         pinned: true,
-                        backgroundColor: Colors.white,
+                        backgroundColor: Get.isDarkMode ? Colors.black : Colors.white,
                         automaticallyImplyLeading: false,
                         bottom: PreferredSize(
-                          preferredSize: Size.fromHeight(50.0),
+                          preferredSize: Size.fromHeight(44.0),
                           child: Container(
                             margin: const EdgeInsets.only(bottom: 20),
                             child: TabBar(
