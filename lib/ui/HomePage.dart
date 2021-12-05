@@ -287,6 +287,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                               isScrollable: true,
                               labelPadding: const EdgeInsets.only(right: 10),
                               indicator: BoxDecoration(
+                                color: Get.isDarkMode ? Colors.black12 : Colors.white,
                                 borderRadius: BorderRadius.circular(10),
                                 boxShadow: [
                                   BoxShadow(
