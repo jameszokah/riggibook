@@ -258,7 +258,7 @@ class _DetailedAudioPageState extends State<DetailedAudioPage> {
                             child: Container(
                               margin: const EdgeInsets.only(top: 20),
                               decoration: BoxDecoration(
-                                color: Get.isDarkMode ? Colors.black12 : Colors.white,
+                                color: Get.isDarkMode ? Colors.black38 : Colors.white,
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               child: Padding(
