@@ -60,12 +60,12 @@ class _AudioBookPlayerState extends State<AudioBookPlayer> {
     });
 
     if (mounted) {
-      if (this.widget.audioUrls.length >= 0) {
-        this.widget.audioBookPlayer!.play(this.widget.audioUrls.elementAt(initIndex)).then((cur) => print("playing from url"));
-        setState(() {
-          this.widget.audioUrlIndex != null ? initIndex = this.widget.audioUrlIndex : initIndex;
-        });
-      }
+      // if (this.widget.audioUrls.length >= 0) {
+      //   this.widget.audioBookPlayer!.play(this.widget.audioUrls.elementAt(initIndex)).then((cur) => print("playing from url"));
+      //   setState(() {
+      //     this.widget.audioUrlIndex != null ? initIndex = this.widget.audioUrlIndex : initIndex;
+      //   });
+      // }
     }
   }
 
