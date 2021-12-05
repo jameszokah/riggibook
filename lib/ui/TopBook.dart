@@ -34,7 +34,7 @@ class TopBook extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: Get.isDarkMode ? Colors.black : AppColor.tabVarViewColor,
+                  color: Get.isDarkMode ? Colors.black26 : AppColor.tabVarViewColor,
                   boxShadow: [
                     BoxShadow(
                       color: Colors.grey.withOpacity(0.2),

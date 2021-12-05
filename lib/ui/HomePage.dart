@@ -195,7 +195,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                   children: [
                     Builder(
                       builder: (context) => IconButton(
-                        icon: ImageIcon(AssetImage("img/menu.png"), size: 22, color: Colors.black),
+                        icon: ImageIcon(AssetImage("img/menu.png"), size: 22, color: Get.isDarkMode ? Colors.white : Colors.black),
                         onPressed: () {
                           Scaffold.of(context).openDrawer();
                         },
