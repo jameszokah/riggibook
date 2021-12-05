@@ -54,7 +54,7 @@ class _AudioBookPlayerState extends State<AudioBookPlayer> {
         }
       });
     });
-    if (this.widget.audioUrls.length >= 0) {
+    if (this.widget.audioUrls != null) {
       this.widget.audioUrls.forEach((url) {
         this.widget.audioBookPlayer!.setUrl(url);
       });
