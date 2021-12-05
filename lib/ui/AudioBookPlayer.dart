@@ -63,7 +63,7 @@ class _AudioBookPlayerState extends State<AudioBookPlayer> {
       if (this.widget.audioUrls.length >= 0) {
         this.widget.audioBookPlayer!.play(this.widget.audioUrls.elementAt(initIndex)).then((cur) => print("playing from url"));
         setState(() {
-          initIndex = this.widget.audioUrlIndex;
+          this.widget.audioUrlIndex != null ? initIndex = this.widget.audioUrlIndex : initIndex;
         });
       }
     }
