@@ -28,7 +28,7 @@ class PopularBook extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: Get.isDarkMode ? Colors.black : AppColor.tabVarViewColor,
+                  color: Get.isDarkMode ? Colors.black38 : AppColor.tabVarViewColor,
                   boxShadow: [
                     BoxShadow(
                       color: Colors.grey.withOpacity(0.2),
