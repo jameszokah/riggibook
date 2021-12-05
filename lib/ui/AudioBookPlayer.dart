@@ -17,6 +17,7 @@ class _AudioBookPlayerState extends State<AudioBookPlayer> {
   bool isRepeating = false;
   bool isLooping = false;
   int playNext = 1;
+  int initIndex = 0;
   bool? playAction;
 
   List<IconData> _icon = <IconData>[
@@ -59,9 +60,10 @@ class _AudioBookPlayerState extends State<AudioBookPlayer> {
     });
 
     if (mounted) {
-      this.widget.audioBookPlayer!.play(this.widget.audioUrls.elementAt(0)).then((cur) => print("playing from url"));
+      this.widget.audioBookPlayer!.play(this.widget.audioUrls.elementAt(initIndex)).then((cur) => print("playing from url"));
       setState(() {
         isPlaying = true;
+        initIndex = this.widget.audioUrlIndex;
       });
     }
   }
