@@ -210,7 +210,7 @@ class _DetailedAudioPageState extends State<DetailedAudioPage> {
               decoration: BoxDecoration(
                 color: Get.isDarkMode ? Colors.black54 : AppColor.audioGreyBackgound,
                 borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: Get.isDarkMode ? Colors.black26 : Colors.white, width: 2),
+                border: Border.all(color: Get.isDarkMode ? Colors.black : Colors.white, width: 2),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(20),
