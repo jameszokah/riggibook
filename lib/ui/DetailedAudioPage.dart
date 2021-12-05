@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'AppColor.dart';
 import 'AudioBookPlayer.dart';
 import "package:audio/utils/utils.dart";
@@ -128,7 +129,7 @@ class _DetailedAudioPageState extends State<DetailedAudioPage> {
     final double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      backgroundColor: AppColor.audioBluishBackgound,
+      backgroundColor: Get.isDarkMode ? Colors.black12.withOpacity(1) : AppColor.audioBluishBackgound,
       body: Stack(
         children: [
           Positioned(
@@ -169,7 +170,7 @@ class _DetailedAudioPageState extends State<DetailedAudioPage> {
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(40),
-                color: Colors.white,
+                color: Get.isDarkMode ? Colors.black38 : Colors.white,
               ),
             ),
           ),
@@ -192,7 +193,7 @@ class _DetailedAudioPageState extends State<DetailedAudioPage> {
                   subTitle(),
                   style: TextStyle(
                     fontSize: 20,
-                    color: AppColor.subTitleText,
+                    color: Get.isDarkMode ? Colors.grey[200] : AppColor.subTitleText,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -207,9 +208,9 @@ class _DetailedAudioPageState extends State<DetailedAudioPage> {
             height: screenHeight * 0.22,
             child: Container(
               decoration: BoxDecoration(
-                color: AppColor.audioGreyBackgound,
+                color: Get.isDarkMode ? Colors.black54 : AppColor.audioGreyBackgound,
                 borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: Colors.white, width: 2),
+                border: Border.all(color: Get.isDarkMode ? Colors.black : Colors.white, width: 2),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(20),
@@ -257,7 +258,7 @@ class _DetailedAudioPageState extends State<DetailedAudioPage> {
                             child: Container(
                               margin: const EdgeInsets.only(top: 20),
                               decoration: BoxDecoration(
-                                color: Colors.white,
+                                color: Get.isDarkMode ? Colors.black12 : Colors.white,
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               child: Padding(
@@ -293,7 +294,7 @@ class _DetailedAudioPageState extends State<DetailedAudioPage> {
                                 return Container(
                                   margin: const EdgeInsets.only(top: 20, left: 10),
                                   decoration: BoxDecoration(
-                                    color: Colors.white,
+                                    color: Get.isDarkMode ? Colors.black12 : Colors.white,
                                     borderRadius: BorderRadius.circular(10),
                                   ),
                                   child: Container(

@@ -1,7 +1,9 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:xml2json/xml2json.dart';
+import '../service/ThemeService.dart';
 import 'AllBooks.dart';
 import 'AppColor.dart';
 import 'dart:convert';
@@ -166,6 +168,9 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                 ListTile(
                   title: const Text('Dark Theme'),
                   onTap: () {
+                    setState(() {
+                      ThemeService().switchTheme();
+                    });
                     print("theme changed");
                     // ...
                     Navigator.pop(context);
@@ -192,7 +197,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                   children: [
                     Builder(
                       builder: (context) => IconButton(
-                        icon: ImageIcon(AssetImage("img/menu.png"), size: 22, color: Colors.black),
+                        icon: ImageIcon(AssetImage("img/menu.png"), size: 22, color: Get.isDarkMode ? Colors.white : Colors.black),
                         onPressed: () {
                           Scaffold.of(context).openDrawer();
                         },
@@ -271,12 +276,13 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                     return [
                       SliverAppBar(
                         pinned: true,
-                        backgroundColor: Colors.white,
+                        backgroundColor: Get.isDarkMode ? Colors.black38 : Colors.white,
                         automaticallyImplyLeading: false,
                         bottom: PreferredSize(
-                          preferredSize: Size.fromHeight(50.0),
+                          preferredSize: Size.fromHeight(44.0),
                           child: Container(
                             margin: const EdgeInsets.only(bottom: 20),
+                            color: Get.isDarkMode ? Colors.black12 : Colors.white,
                             child: TabBar(
                               controller: _tabController,
                               indicatorPadding: const EdgeInsets.all(0),

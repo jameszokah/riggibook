@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:shimmer_animation/shimmer_animation.dart';
 import 'AppColor.dart';
 import 'DetailedAudioPage.dart';
 
@@ -43,7 +45,7 @@ class NewBook extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: AppColor.tabVarViewColor,
+                  color: Get.isDarkMode ? Colors.black38 : AppColor.tabVarViewColor,
                   boxShadow: [
                     BoxShadow(
                       color: Colors.grey.withOpacity(0.2),
