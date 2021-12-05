@@ -7,7 +7,7 @@ class Themes {
   );
 
   static final dark = ThemeData(
-    primaryColor: Colors.black,
+    primaryColor: Colors.black12,
     brightness: Brightness.dark,
   );
 }
