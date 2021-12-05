@@ -276,13 +276,13 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                     return [
                       SliverAppBar(
                         pinned: true,
-                        backgroundColor: Get.isDarkMode ? Colors.black12 : Colors.white,
+                        backgroundColor: Get.isDarkMode ? Colors.black45 : Colors.white,
                         automaticallyImplyLeading: false,
                         bottom: PreferredSize(
                           preferredSize: Size.fromHeight(44.0),
                           child: Container(
                             margin: const EdgeInsets.only(bottom: 20),
-                            color: Get.isDarkMode ? Colors.black12.withOpacity(1) : Colors.white,
+                            color: Get.isDarkMode ? Colors.black12 : Colors.white,
                             child: TabBar(
                               controller: _tabController,
                               indicatorPadding: const EdgeInsets.all(0),

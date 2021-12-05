@@ -129,7 +129,7 @@ class _DetailedAudioPageState extends State<DetailedAudioPage> {
     final double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      backgroundColor: Get.isDarkMode ? Colors.black : AppColor.audioBluishBackgound,
+      backgroundColor: Get.isDarkMode ? Colors.black12.wthOpacity(1) : AppColor.audioBluishBackgound,
       body: Stack(
         children: [
           Positioned(
@@ -258,7 +258,7 @@ class _DetailedAudioPageState extends State<DetailedAudioPage> {
                             child: Container(
                               margin: const EdgeInsets.only(top: 20),
                               decoration: BoxDecoration(
-                                color: Get.isDarkMode ? Colors.black38 : Colors.white,
+                                color: Get.isDarkMode ? Colors.black12 : Colors.white,
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               child: Padding(
