@@ -6,6 +6,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 class ThemeService {
   final _box = GetStorage();
   final String _key = 'isDarkMode';
+  SharedPreferences? store;
+  ThemeMode? getTheme;
+  bool? loadTheme;
 
   void _saveThemeToBox(bool isDarkMode) => _box.write(_key, isDarkMode);
 
@@ -19,7 +22,13 @@ class ThemeService {
   }
 
   storeTheme() async {
-    SharedPreferences store = await SharedPreferences.getInstance();
-    final loadTheme = store.getBool(_key) ?? false;
+    store = await SharedPreferences.getInstance();
+    loadTheme = store!.getBool(_key) ?? false;
+    getTheme = loadTheme! ? ThemeMode.dark : ThemeMode.light;
+  }
+
+  changeTheme() {
+    Get.changeThemeMode(loadTheme! ? ThemeMode.dark : ThemeMode.light);
+    store!.setBool(_key, !loadTheme!);
   }
 }

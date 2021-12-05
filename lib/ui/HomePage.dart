@@ -141,6 +141,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
     _tabController = TabController(length: 3, vsync: this);
     _scrollController = ScrollController();
     audioBookPlayer = AudioPlayer(playerId: "audioBook");
+    ThemeService.storeTheme();
   }
 
   @override
