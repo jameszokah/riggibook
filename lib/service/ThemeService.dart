@@ -19,7 +19,7 @@ class ThemeService {
   }
 
   storeTheme() async {
-    SharedPreferences store = await SharedPreferences.instance();
+    SharedPreferences store = await SharedPreferences.getInstance();
     final loadTheme = store.getBool(_key) ?? false;
   }
 }
