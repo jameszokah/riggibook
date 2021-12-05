@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ThemeService {
   final _box = GetStorage();
@@ -13,7 +14,12 @@ class ThemeService {
   ThemeMode get theme => _loadThemeFromBox() ? ThemeMode.dark : ThemeMode.light;
 
   void switchTheme() {
-    Get.changeThemeMode(_loadThemeFromBox() ? ThemeMode.light : ThemeMode.dark);
+    Get.changeThemeMode(_loadThemeFromBox() ? ThemeMode.dark : ThemeMode.light);
     _saveThemeToBox(!_loadThemeFromBox());
+  }
+
+  storeTheme() async {
+    SharedPreferences store = await SharedPreferences.instance();
+    final loadTheme = store.getBool(_key) ?? false;
   }
 }

@@ -30,6 +30,7 @@ dependencies:
   shimmer_animation: ^2.1.0
   get: ^4.5.1
   get_storage: ^2.0.3
+  shared_preferences: ^2.0.9
 
 dev_dependencies:
   flutter_test:
