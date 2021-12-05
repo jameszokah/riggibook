@@ -129,7 +129,7 @@ class _DetailedAudioPageState extends State<DetailedAudioPage> {
     final double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      backgroundColor: AppColor.audioBluishBackgound,
+      backgroundColor: Get.isDarkMode ? Colors.black12 : AppColor.audioBluishBackgound,
       body: Stack(
         children: [
           Positioned(
