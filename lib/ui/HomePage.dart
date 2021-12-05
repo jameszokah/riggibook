@@ -166,6 +166,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                 ListTile(
                   title: const Text('Dark Theme'),
                   onTap: () {
+                    ThemeService().switchTheme();
                     print("theme changed");
                     // ...
                     Navigator.pop(context);
