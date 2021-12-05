@@ -193,7 +193,7 @@ class _DetailedAudioPageState extends State<DetailedAudioPage> {
                   subTitle(),
                   style: TextStyle(
                     fontSize: 20,
-                    color: AppColor.subTitleText,
+                    color: Get.isDarkMode ? Colors.grey[200] : AppColor.subTitleText,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -258,7 +258,7 @@ class _DetailedAudioPageState extends State<DetailedAudioPage> {
                             child: Container(
                               margin: const EdgeInsets.only(top: 20),
                               decoration: BoxDecoration(
-                                color: Colors.white,
+                                color: Get.isDarkMode ? Colors.black12 : Colors.white,
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               child: Padding(
