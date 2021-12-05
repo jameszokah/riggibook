@@ -1,5 +1,6 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class AudioBookPlayer extends StatefulWidget {
   final AudioPlayer? audioBookPlayer;
@@ -108,7 +109,7 @@ class _AudioBookPlayerState extends State<AudioBookPlayer> {
           ? ImageIcon(
               AssetImage("img/repeat.png"),
               size: 15,
-              color: Colors.black,
+              color: Get.isDarkMode ? Colors.white : Colors.black,
             )
           : ImageIcon(
               AssetImage("img/repeat.png"),
@@ -205,7 +206,11 @@ class _AudioBookPlayerState extends State<AudioBookPlayer> {
         children: <Widget>[
           repeatButton(),
           IconButton(
-              icon: ImageIcon(AssetImage("img/backword.png"), size: 15, color: Colors.black),
+              icon: ImageIcon(
+                AssetImage("img/backword.png"),
+                size: 15,
+                color: Get.isDarkMode ? Colors.white : Colors.black,
+              ),
               onPressed: () {
                 setState(() async {
                   // url = "https://www.morexlusive.com/wp-content/uploads/2021/09/Tion_Wayne_ft_Davido_Jae5_-_Who_s_True.mp3";
@@ -216,7 +221,11 @@ class _AudioBookPlayerState extends State<AudioBookPlayer> {
               }),
           playButton(),
           IconButton(
-              icon: ImageIcon(AssetImage("img/forward.png"), size: 15, color: Colors.black),
+              icon: ImageIcon(
+                AssetImage("img/forward.png"),
+                size: 15,
+                color: Get.isDarkMode ? Colors.white : Colors.black,
+              ),
               onPressed: () {
                 setState(() async {
                   url = url1;
