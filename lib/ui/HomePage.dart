@@ -282,7 +282,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                           preferredSize: Size.fromHeight(44.0),
                           child: Container(
                             margin: const EdgeInsets.only(bottom: 20),
-                            color: Get.isDarkMode ? Colors.black12 : Colors.white,
+                            color: Get.isDarkMode ? Colors.black12.withOpacity(1) : Colors.white,
                             child: TabBar(
                               controller: _tabController,
                               indicatorPadding: const EdgeInsets.all(0),
@@ -290,7 +290,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                               isScrollable: true,
                               labelPadding: const EdgeInsets.only(right: 10),
                               indicator: BoxDecoration(
-                                color: Get.isDarkMode ? Colors.black12 : Colors.white,
+                                color: Get.isDarkMode ? Colors.black12.withOpacity(1) : Colors.white,
                                 borderRadius: BorderRadius.circular(10),
                                 boxShadow: [
                                   BoxShadow(
