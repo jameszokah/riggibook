@@ -280,6 +280,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                           preferredSize: Size.fromHeight(44.0),
                           child: Container(
                             margin: const EdgeInsets.only(bottom: 20),
+                            color: Get.isDarkMode ? Colors.black12 : Colors.white,
                             child: TabBar(
                               controller: _tabController,
                               indicatorPadding: const EdgeInsets.all(0),
