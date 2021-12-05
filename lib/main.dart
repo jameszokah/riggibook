@@ -14,9 +14,9 @@ class MyApp extends StatelessWidget {
       // Application name
       title: 'Audio Player',
       debugShowCheckedModeBanner: false,
-      theme: Themes.light,
+      theme: Themes.dark,
       themeMode: ThemeService().theme,
-      darkTheme: Themes.dark,
+      darkTheme: Themes.light,
       home: HomePage(),
     );
   }
