@@ -22,7 +22,6 @@ class _DetailedAudioPageState extends State<DetailedAudioPage> {
   List bookAudio = [];
   List recentBook = [];
   List audioList = [];
-  int audioUrlIndex = 0;
 
   void _getAudioFile() async {
     try {
@@ -69,9 +68,6 @@ class _DetailedAudioPageState extends State<DetailedAudioPage> {
     audioBookPlayer = AudioPlayer(playerId: "audioBook");
     _getAudioFile();
     _loadRecent();
-    // audioList.forEach((url) {
-    //   audioBookPlayer.setUrl(url);
-    // });
   }
 
   ImageProvider playerLogo() {
@@ -114,11 +110,11 @@ class _DetailedAudioPageState extends State<DetailedAudioPage> {
     return title;
   }
 
-  playAudio(audio) async {
+  playAudio(audio) {
     if (mounted) {
-      await audioBookPlayer.stop();
-      // audioBookPlayer.setUrl(audio);
-      await audioBookPlayer.play(audio);
+      audioBookPlayer.stop();
+      audioBookPlayer.setUrl(audio);
+      audioBookPlayer.play(audio);
     }
   }
 
@@ -196,7 +192,7 @@ class _DetailedAudioPageState extends State<DetailedAudioPage> {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                AudioBookPlayer(audioBookPlayer: audioBookPlayer, audioUrls: audioList, audioUrlIndex: audioUrlIndex),
+                AudioBookPlayer(audioBookPlayer: audioBookPlayer, audioUrls: audioList),
               ],
             ),
           ),
@@ -248,9 +244,7 @@ class _DetailedAudioPageState extends State<DetailedAudioPage> {
                           return GestureDetector(
                             onTap: () {
                               Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => DetailedAudioPage(books: this.widget.books, fromLibrivox: true, fromHome: false, fromSub: false)));
-                              setState(() {
-                                audioUrlIndex = i;
-                              });
+
                               // playAudio(audioList[i]);
                               // this.audioCallback!();
                             },

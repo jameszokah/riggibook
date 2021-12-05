@@ -4,20 +4,18 @@ import 'package:flutter/material.dart';
 class AudioBookPlayer extends StatefulWidget {
   final AudioPlayer? audioBookPlayer;
   final audioUrls;
-  final audioUrlIndex;
-  const AudioBookPlayer({this.audioBookPlayer, this.audioUrls, this.audioUrlIndex});
+  const AudioBookPlayer({this.audioBookPlayer, this.audioUrls});
   _AudioBookPlayerState createState() => _AudioBookPlayerState();
 }
 
 class _AudioBookPlayerState extends State<AudioBookPlayer> {
   Duration _duration = Duration();
   Duration _position = Duration();
-  bool isPlaying = false;
+  bool isPlaying = true;
   bool isPaused = false;
   bool isRepeating = false;
   bool isLooping = false;
   int playNext = 1;
-  bool? playAction;
 
   List<IconData> _icon = <IconData>[
     Icons.play_circle_fill,
@@ -29,7 +27,6 @@ class _AudioBookPlayerState extends State<AudioBookPlayer> {
   @override
   void initState() {
     super.initState();
-    playAction = (this.widget.audioUrls.length >= this.widget.audioUrlIndex) && (this.widget.audioUrlIndex <= this.widget.audioUrls.length);
     this.widget.audioBookPlayer!.onDurationChanged.listen((duration) {
       setState(() {
         _duration = duration;
@@ -53,17 +50,10 @@ class _AudioBookPlayerState extends State<AudioBookPlayer> {
         }
       });
     });
-
     this.widget.audioUrls.forEach((url) {
       this.widget.audioBookPlayer!.setUrl(url);
     });
-
-    if (mounted) {
-      this.widget.audioBookPlayer!.play(this.widget.audioUrls.first).then((cur) => print("playing from url"));
-      setState(() {
-        isPlaying = true;
-      });
-    }
+    this.widget.audioBookPlayer!.play(this.widget.audioUrls[0]);
   }
 
   Widget playButton() {
@@ -82,7 +72,7 @@ class _AudioBookPlayerState extends State<AudioBookPlayer> {
             ),
       onPressed: () {
         if (isPlaying == false) {
-          this.widget.audioBookPlayer!.play(this.widget.audioUrls[this.widget.audioUrlIndex]);
+          this.widget.audioBookPlayer!.play(this.widget.audioUrls[1]);
           setState(() {
             isPlaying = true;
           });
@@ -203,10 +193,10 @@ class _AudioBookPlayerState extends State<AudioBookPlayer> {
           IconButton(
               icon: ImageIcon(AssetImage("img/backword.png"), size: 15, color: Colors.black),
               onPressed: () {
-                setState(() async {
-                  // url = "https://www.morexlusive.com/wp-content/uploads/2021/09/Tion_Wayne_ft_Davido_Jae5_-_Who_s_True.mp3";
-                  await this.widget.audioBookPlayer!.stop();
-                  await this.widget.audioBookPlayer!.play(this.widget.audioUrls.elementAt(playAction == true && this.widget.audioUrlIndex - playNext));
+                setState(() {
+                  url = "https://www.morexlusive.com/wp-content/uploads/2021/09/Tion_Wayne_ft_Davido_Jae5_-_Who_s_True.mp3";
+                  this.widget.audioBookPlayer!.pause();
+                  this.widget.audioBookPlayer!.play(url);
                   isPlaying = true;
                 });
               }),
@@ -214,10 +204,10 @@ class _AudioBookPlayerState extends State<AudioBookPlayer> {
           IconButton(
               icon: ImageIcon(AssetImage("img/forward.png"), size: 15, color: Colors.black),
               onPressed: () {
-                setState(() async {
+                setState(() {
                   url = url1;
-                  await this.widget.audioBookPlayer!.stop();
-                  await this.widget.audioBookPlayer!.play(this.widget.audioUrls.elementAt(playAction == true && this.widget.audioUrlIndex + playNext));
+                  this.widget.audioBookPlayer!.pause();
+                  this.widget.audioBookPlayer!.play(url);
                   isPlaying = true;
                 });
               }),
